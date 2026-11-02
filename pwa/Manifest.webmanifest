@@ -1,7 +1,7 @@
 
 
 {
-  "name": " Playlist PWA",
+  "name": "Playlist PWA",
   "short_name": "Playlist",
   "start_url": ".",
   "display": "standalone",
