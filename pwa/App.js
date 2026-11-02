@@ -39,11 +39,18 @@ async function cargarCanciones() {
     banner.textContent = '⚠️ Sin conexión — mostrando playlist en caché';
     banner.classList.remove('online', 'oculto');
     banner.classList.add('offline');
+
     try {
-      const cache = await caches.open('playlist-dynamic');
+      const cache = await caches.open('playlist-dynamic-v2'); // ← nuevo nombre
       const cached = await cache.match(API_URL);
-      if (cached) render(await cached.json());
-    } catch (_) { /* silencio */ }
+      if (cached) {
+        render(await cached.json());
+      } else {
+        lista.innerHTML = '<p style="text-align:center">Sin canciones en caché. Conéctate a internet una vez para cargar la playlist 🎧</p>';
+      }
+    } catch (_) {
+      lista.innerHTML = '<p style="text-align:center">Sin conexión y sin caché 🎧</p>';
+    }
   }
 }
 
@@ -54,9 +61,8 @@ function render(canciones) {
   }
   lista.innerHTML = canciones.map(c => `
     <div class="card">
-      <div class="portada" style="background: ${c.color}; color: ${esColorClaro(c.color) ? '#121212' : '#fff'};">
-        <span>${c.iniciales}</span>
-      </div>
+      <img src="${c.portada}" alt="${c.titulo}" loading="lazy"
+           onerror="this.src='icono-192.png'">
       <div class="info">
         <h2>${c.titulo}</h2>
         <p class="artista">${c.artista}</p>
@@ -70,13 +76,6 @@ function render(canciones) {
   `).join('');
 }
 
-// Detecta si el color es claro para poner texto oscuro
-function esColorClaro(hex) {
-  const r = parseInt(hex.slice(1,3), 16);
-  const g = parseInt(hex.slice(3,5), 16);
-  const b = parseInt(hex.slice(5,7), 16);
-  return (r * 299 + g * 587 + b * 114) / 1000 > 150;
-}
 /* ---------- SERVICE WORKER ---------- */
 async function registerSW() {
   if ('serviceWorker' in navigator) {

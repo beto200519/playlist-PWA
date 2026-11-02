@@ -1,19 +1,10 @@
-
-
 {
-  "name": "Playlist PWA",
-  "short_name": "Playlist",
+  "name": "Puras Pa Pistiar - PWA",
+  "short_name": "Puras Pa Pistiar",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#1db954",
-  "description": "Playlist personal - Norberto Crrillo Leyva",
-   "icons":[
-        {
-            "src":"icono2.png",
-            "sizes":"144x144",
-            "type":"image/png"
-        }
-    ]
-   
+  "description": "Playlist personal - Norberto Carrillo Leyva"
+  
 }
