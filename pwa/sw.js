@@ -1,5 +1,5 @@
-const CACHE_STATIC  = 'playlist-static-v1';
-const CACHE_DYNAMIC = 'playlist-dynamic';
+const CACHE_STATIC  = 'playlist-static-v3';
+const CACHE_DYNAMIC = 'playlist-dynamic-v3';
 
 const STATIC_ASSETS = [
   './',
