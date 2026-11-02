@@ -2,6 +2,7 @@ const $ = sel => document.querySelector(sel);
 
 const API_URL = 'https://playlist-pwa.onrender.com/api/canciones';
 const LS_KEY  = 'playlist_guardada';
+const CACHE_DYNAMIC = 'playlist-dynamic-v4';
 
 let todasLasCanciones = [];
 let generoActivo = 'Todos';
@@ -44,18 +45,20 @@ async function cargarCanciones() {
     renderTodo();
   } catch (err) {
     console.warn('Fetch falló, intentando caché…', err);
+
+    // Intentar leer del caché dinámico (v4)
     try {
-      const cache = await caches.open('playlist-dynamic-v2');
+      const cache = await caches.open(CACHE_DYNAMIC);
       const cached = await cache.match(API_URL);
       if (cached) {
         todasLasCanciones = await cached.json();
         renderTodo();
-      } else {
-        $('#lista').innerHTML = '<p class="vacio">Sin canciones en caché. Conéctate una vez para cargar la playlist 🎧</p>';
+        return;
       }
-    } catch (_) {
-      $('#lista').innerHTML = '<p class="vacio">Sin conexión y sin caché 🎧</p>';
-    }
+    } catch (_) { /* silencio */ }
+
+    // Si no hay caché, mostrar mensaje
+    $('#lista').innerHTML = '<p class="vacio">Sin conexión y sin datos en caché 🎧</p>';
   }
 }
 
@@ -184,7 +187,7 @@ function abrirModalCancion(id) {
 
 function resetPlayer() {
   clearInterval(playInterval);
-  reproducizando = false;
+  reproduciendo = false;
   playSegundos = 0;
   $('#btnPlay').textContent = '▶';
   $('#progressBar').style.width = '0%';
@@ -198,10 +201,10 @@ function togglePlay() {
 
   if (reproduciendo) {
     clearInterval(playInterval);
-    reproducizando = false;
+    reproduciendo = false;
     $('#btnPlay').textContent = '▶';
   } else {
-    reproducizando = true;
+    reproduciendo = true;
     $('#btnPlay').textContent = '⏸';
     playInterval = setInterval(() => {
       playSegundos++;

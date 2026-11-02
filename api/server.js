@@ -46,6 +46,6 @@ app.get('/api/canciones/:id', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`API escuchando en http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`API escuchando en el puerto ${PORT}`);
 });
