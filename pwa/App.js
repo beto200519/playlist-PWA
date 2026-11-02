@@ -60,9 +60,7 @@ function render(canciones) {
     return;
   }
   lista.innerHTML = canciones.map(c => `
-    <div class="card">
-      <img src="${c.portada}" alt="${c.titulo}" loading="lazy"
-           onerror="this.src='icono-192.png'">
+    <div class="card"> 
       <div class="info">
         <h2>${c.titulo}</h2>
         <p class="artista">${c.artista}</p>
