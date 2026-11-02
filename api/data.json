@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "titulo": "Bohemian Rhapsody",
+    "artista": "Queen",
+    "album": "A Night at the Opera",
+    "genero": "Rock",
+    "duracion": "5:55",
+    "anio": 1975,
+    "portada": "https://picsum.photos/seed/queen/300/300"
+  },
+  {
+    "id": 2,
+    "titulo": "Blinding Lights",
+    "artista": "The Weeknd",
+    "album": "After Hours",
+    "genero": "Synth-pop",
+    "duracion": "3:20",
+    "anio": 2019,
+    "portada": "https://picsum.photos/seed/weeknd/300/300"
+  },
+  {
+    "id": 3,
+    "titulo": "Bad Guy",
+    "artista": "Billie Eilish",
+    "album": "When We All Fall Asleep",
+    "genero": "Pop",
+    "duracion": "3:14",
+    "anio": 2019,
+    "portada": "https://picsum.photos/seed/billie/300/300"
+  },
+  {
+    "id": 4,
+    "titulo": "Smells Like Teen Spirit",
+    "artista": "Nirvana",
+    "album": "Nevermind",
+    "genero": "Grunge",
+    "duracion": "5:01",
+    "anio": 1991,
+    "portada": "https://picsum.photos/seed/nirvana/300/300"
+  },
+  {
+    "id": 5,
+    "titulo": "Shape of You",
+    "artista": "Ed Sheeran",
+    "album": "÷ (Divide)",
+    "genero": "Pop",
+    "duracion": "3:53",
+    "anio": 2017,
+    "portada": "https://picsum.photos/seed/ed/300/300"
+  },
+  {
+    "id": 6,
+    "titulo": "Lose Yourself",
+    "artista": "Eminem",
+    "album": "8 Mile",
+    "genero": "Hip-hop",
+    "duracion": "5:26",
+    "anio": 2002,
+    "portada": "https://picsum.photos/seed/eminem/300/300"
+  },
+  {
+    "id": 7,
+    "titulo": "Rolling in the Deep",
+    "artista": "Adele",
+    "album": "21",
+    "genero": "Soul",
+    "duracion": "3:48",
+    "anio": 2010,
+    "portada": "https://picsum.photos/seed/adele/300/300"
+  },
+  {
+    "id": 8,
+    "titulo": "Levitating",
+    "artista": "Dua Lipa",
+    "album": "Future Nostalgia",
+    "genero": "Disco-pop",
+    "duracion": "3:23",
+    "anio": 2020,
+    "portada": "https://picsum.photos/seed/dua/300/300"
+  }
+]

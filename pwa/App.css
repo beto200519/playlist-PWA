@@ -1,0 +1,82 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #121212;
+  color: #f1f1f1;
+}
+header {
+  background: linear-gradient(135deg, #1db954, #158a3e);
+  color: white;
+  padding: 1.2rem;
+  text-align: center;
+}
+header h1 { margin: 0 0 .3rem; font-size: 1.4rem; }
+.alumno { margin: 0; font-size: .85rem; color: #d4f5dd; }
+
+#status-banner {
+  text-align: center;
+  padding: .6rem;
+  font-weight: bold;
+  transition: all .4s ease;
+}
+.online  { background: #1db954; color: white; }
+.offline { background: #e63946; color: white; }
+.oculto  { display: none !important; }
+
+#lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease;
+}
+.card:hover { transform: translateY(-4px); }
+.card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  background: #333;
+}
+.card .info { padding: .9rem 1rem 1rem; }
+.card h2 {
+  margin: 0 0 .2rem;
+  font-size: 1.05rem;
+  color: #fff;
+}
+.card .artista {
+  margin: 0 0 .5rem;
+  color: #1db954;
+  font-weight: 600;
+  font-size: .9rem;
+}
+.card .album {
+  margin: 0 0 .6rem;
+  font-size: .8rem;
+  color: #a7a7a7;
+}
+.card .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tag {
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  background: #2a2a2a;
+  color: #cfcfcf;
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+.duracion { font-size: .8rem; color: #a7a7a7; }
